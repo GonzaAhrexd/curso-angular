@@ -1,0 +1,15 @@
+<div class="w-full flex flex-col items-center justify-center bg-red-800 p-2">
+    <div class="flex flex-row">
+        <div class="text-4xl text-white font-bold ">
+            Hola {{nombre}}
+        </div>
+        <img (click)="estado = !estado"
+        src="/favicon.ico" class="ml-2 h-10" alt="">
+            </div>
+        @if(estado){
+            <p class="bg-green-600 rounded-lg h-15 w-15 cursor-pointer" (click)="estado = !estado">ON</p>
+        }@else {
+            <p class="bg-red-600 rounded-lg h-15 w-15 cursor-pointer" (click)="estado = !estado">OFF</p>
+        }   
+
+</div>
