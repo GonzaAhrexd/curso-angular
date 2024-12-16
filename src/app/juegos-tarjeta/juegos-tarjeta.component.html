@@ -1,0 +1,13 @@
+<div class="mx-2 p-2 bg-slate-900 flex flex-col items-center justify-around h-96 rounded-lg ">
+    <p class="cursor-pointer text-4-xl" (click)="fav(nombre)">⭐</p>
+    <figure 
+    class="w-full flex items-end justify-end" 
+    >
+    <img src={{imagen}} alt="" class="w-full  rounded-lg">
+</figure>
+<div class="flex flex-col items-start justify-start">
+        <h1 class="text-2xl">{{nombre}}</h1>
+        <h2 class="text-lg">{{lanzamiento}}</h2>
+        <h2 class="text-lg">{{genero}}</h2>
+    </div>
+</div>
