@@ -1,29 +1,35 @@
-<form action="" class="p-2 rounded-lg flex flex-col bg-slate-900 ">
+<form action="" class="p-2 rounded-lg flex flex-col bg-slate-900 " [formGroup]="form()">
     <div class="flex flex-col">
         <label for="nombre">Nombre</label>
-        <input type="text" class="rounded-lg w-full bg-slate-600"  id="nombre" placeholder="Nombre">
+        <input type="text" class="rounded-lg pl-2 h-8 w-full bg-slate-600" formControlName="nombre" id="nombre" placeholder="Nombre">
     </div>
 
     <div class="flex flex-col">
         <label for="apellido">Fecha de Salida</label>
-            <input type="text" class="rounded-lg w-full bg-slate-600" id="fecha_de_salida" placeholder="Fecha de salida">
+            <input type="text" class="rounded-lg w-full pl-2 h-8 bg-slate-600" formControlName="fecha_de_salida" id="fecha_de_salida" placeholder="Fecha de salida">
     </div>
     
     <div class="flex flex-col">
         <label for="apellido">Categoría</label>
-            <input type="text" class="rounded-lg w-full bg-slate-600" id="categoria" placeholder="Cateogría">
+            <input type="text" class="rounded-lg w-full pl-2 h-8 bg-slate-600" id="categoria" placeholder="Cateogría" formControlName="categoria">
     </div>
 
     
     <div class="flex flex-col">
         <label for="apellido">Imagen</label>
-            <input type="text" class="rounded-lg w-full bg-slate-600" id="imagen" placeholder="Imagen">
+            <input type="text" class="rounded-lg w-full pl-2 h-8 bg-slate-600" id="imagen" placeholder="Imagen" formControlName="imagen">
     </div>
 
     <div class="my-2 flex flex-col">
-    <button class="rounded-lg bg-blue-800 hover:bg-blue-400">Enviar</button>
+        @if(form().invalid){
+            <div class="rounded-lg bg-red-800 text-white p-2">Por favor, rellena todos los campos</div>
+        } @else {   
+            <button (click)="addGame()" class="rounded-lg bg-blue-800 hover:bg-blue-400">Enviar</button>
+        }
     </div>
 
     
       
 </form>
+
+<pre>{{form().valid | json }}</pre>

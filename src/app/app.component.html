@@ -6,7 +6,7 @@
       <User />
     </div>
     <div class="flex flex-col items-center justify-center w-full">  
-      <app-formulario/>
+      <app-formulario (newGame)="addNewGame($event)"/>
     </div>
     <div>
       <h1 class="text-2xl">Lista de juegos</h1>

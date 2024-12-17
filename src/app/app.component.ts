@@ -47,6 +47,21 @@ export class AppComponent {
     }
   ]
 
+  contador = 4
+
+  addNewGame(newGame: any ){
+    this.games.push({
+       id: this.contador,
+        nombre: newGame.nombre,
+        lanzamiento: newGame.fecha_de_salida,
+        imagen: newGame.imagen,
+        genero: newGame.categoria
+    }
+    )
+
+    this.contador++
+    
+  }
   
 
 }
