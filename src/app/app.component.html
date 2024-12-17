@@ -1,26 +1,5 @@
 <main  >
   <Navbar nombre="Gonza" />
-  <div class="p-4 min-h-screen">
-    <div class="flex flex-col items-center justify-center">
-      <h1 class="text-4xl">Prueba de uso Angular</h1>
-      <User />
-    </div>
-    <div class="flex flex-col items-center justify-center w-full">  
-      <app-formulario (newGame)="addNewGame($event)"/>
-    </div>
-    <div>
-      <h1 class="text-2xl">Lista de juegos</h1>
-      @if(favGame != '') {
-        <h2 class="text-xl">Juego favorito: {{favGame}}</h2>
-      }
-      <div
-      class="grid grid-cols-4 items-center justify-center"
-      >
-      @for (game of games; track game.id) {
-        <app-juegos-tarjeta (favouriteGame)="getFavouriteGame($event)" imagen="{{game.imagen}}" nombre="{{game.nombre}}" lanzamiento="{{game.lanzamiento}}" genero="{{game.genero}}"/> 
-      } 
-    </div>
-    </div>
-  </div>
+  <router-outlet></router-outlet>
   <probando />
 </main>
